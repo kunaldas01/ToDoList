@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 import _ from "lodash";
 
 const app = express();
-const port = 3000;
-const dPort = process.env.PORT; // Dynamic port for Heroku
+const PORT = process.env.PORT || 3000;
+// Dynamic port for Heroku
 
 
 let currTheme = "light";
@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB Atlas online server
 mongoose.connect("mongodb+srv://kunaldusk:thMXljqFOmUu9n2U@cluster0.tg40em3.mongodb.net/todolistDB");
+
+// Cyclic
+mongoose.connect(process.env.MONGO_URI);
 
 // Create item schema
 const itemSchema = mongoose.Schema({
@@ -189,6 +192,13 @@ app.post('/deleteTask', function (req, res) {
 });
 
 
-app.listen(dPort || port, () => {
-    console.log(`Server running on port ${port}`);
+// app.listen(dPort || port, () => {
+//     console.log(`Server running on port ${port}`);
+// })
+
+
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
 })
