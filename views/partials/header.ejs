@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body class="<%= theme %>">
+    <header>
+        <% if(locals.listName){ %>
+
+        <a href="/theme?route=<%= listName %>" class="theme-btn"><img src="images/<%= themeIcon %>.png"
+                alt="sun-moon" /></a>
+
+        <div class="list-name">
+
+            <a href="/" class="home-btn"><img src="images/home.png" alt="home" /></a>
+
+            <img src="images/calender.png" alt="calender" />
+            <p><%= listName %></p>
+
+        </div>
+
+        <% }else{ %>
+
+        <a href="/theme" class="theme-btn"><img src="images/<%= themeIcon %>.png" alt="sun-moon" /></a>
+        <div class="list-name">
+
+            <img src="images/calender.png" alt="calender" />
+            <p>To Do List</p>
+
+        </div>
+        <% } %>
+
+
+    </header>
+    <main>
+        <div class="heading">
+            <% var options={ weekday: 'long' , year: 'numeric' , month: 'long' , day: 'numeric' }; let today=new Date(); %>
+            <% let day=today.toLocaleDateString("en-US", options); %>
+
+            <p>
+                <%= day %>
+            </p>
+        </div>

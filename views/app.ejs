@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<% if(locals.listName){ %>
+
+<%- include("partials/customList.ejs") %>
+
+
+<% }else{ %>
+
+<%- include("partials/home.ejs") %>
+
+<% } %>
+
+<%- include("partials/footer.ejs") %>

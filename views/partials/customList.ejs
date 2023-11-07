@@ -1,0 +1,35 @@
+<div class="card">
+    <img src="images/to-do-list-apps.png" alt="to-do-list-apps" class="top-img" />
+    <form action="/addTask" method="POST" class="creation-form">
+        <button type="submit" name="listName" value="<%= listName %>" class="submit-button">+</button>
+        <input type="text" placeholder="Create a Task........" name="newNote" class="newNote" required />
+    </form>
+
+    <% if(locals.list){ %>
+
+    <ul class="taskList">
+        <% list.item.forEach((item)=>{ %>
+
+        <li class="task-item">
+            <div>
+                <input type="checkbox" id="<%= item.name %>" class="noteCheck" />
+                <label for="<%= item.name %>">
+                    <%= item.name %>
+                </label><br />
+            </div>
+
+            <!-- Delete Button -->
+            <form action="/deleteTask" method="POST">
+                <input type="hidden" name="listName" value="<%= listName %>">
+                <button class="deleteItemBtn" type="submit" name="deleteItemId" value="<%= item._id %>">
+                    <img src="images/delete.png" alt="delete">
+                </button>
+            </form>
+        </li>
+
+        <% }) %>
+    </ul>
+
+    <% } %>
+</div>
+</main>

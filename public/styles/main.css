@@ -1,0 +1,338 @@
+:root {
+    --primary-color: #ECE6FB;
+    --secondary-color: white;
+    --text-color: grey;
+}
+
+.dark {
+    --primary-color: #474E68;
+    --secondary-color: #404258;
+    --text-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+header {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.theme-btn {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    transition: all 0.5s ease-out;
+}
+
+.theme-btn img {
+    height: 30px;
+}
+
+.home-btn:hover {
+    background-color: rgb(182, 182, 182);
+}
+
+.list-name {
+    height: 70px;
+    width: 400px;
+    background-color: #D252F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    gap: 10px;
+    position: relative;
+}
+
+.list-name img {
+    height: 1.5rem;
+}
+
+.list-name p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.home-btn {
+    position: absolute;
+    top: 12px;
+    left: -15%;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+
+.home-btn img {
+    height: 70%;
+}
+
+/* **************************************************************************** */
+/* Home Section */
+main {
+    min-height: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(143, 35, 138);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.list-board {
+    width: 1210px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    position: relative;
+    padding: 40px;
+}
+
+.creation-form {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.submit-button {
+    background-color: rgb(143, 35, 138);
+    color: white;
+    border: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
+
+.submit-button:hover {
+    background-color: #D252F3;
+}
+
+.newNote {
+    height: 50px;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: 1px solid rgba(66, 65, 65, 0.575);
+    padding: 10px;
+}
+
+.collectionList {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.collectionList li {
+    list-style-type: none;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+    width: 350px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.5s ease-out;
+}
+
+.collectionList li:hover {
+    background-image: linear-gradient(62deg, #6c6c6c 0%, #e8d7f7 100%);
+}
+
+.list-icon {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.7rem;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-form {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.deleteItemBtn {
+    border: 0;
+    background-color: transparent;
+    height: 60%;
+}
+
+.deleteItemBtn img {
+    height: 100%;
+}
+
+.delete-form:hover {
+    background-color: rgba(246, 107, 114, 0.772)
+}
+
+
+/* ****************************************************************************************** */
+/* Custom List Section */
+
+.card {
+    width: 450px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+}
+
+.top-img {
+    height: 40%;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.taskList {
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-item {
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+    background-color: #ECE6FB;
+    border-bottom: 1px solid rgba(107, 107, 107, 0.464);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.task-item div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.noteCheck:checked+label {
+    text-decoration: line-through;
+}
+
+.task-item form {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+
+.task-item form:hover {
+    background-color: rgba(246, 107, 114, 0.772)
+}
+
+
+/* ************************************************************************************************** */
+/* Media Query */
+
+@media (max-width: 1350px) and (min-width: 970px) {
+    .collectionList {
+        justify-content: center;
+    }
+
+    .list-board {
+        width: 90%;
+    }
+}
+
+@media (max-width: 970px) {
+
+    .collectionList {
+        justify-content: center;
+    }
+
+    .list-board {
+        width: 60%;
+    }
+
+    .card {
+        width: 80vw;
+    }
+
+    .theme-btn {
+        top: 45px;
+        left: 87%;
+    }
+}
+
+
+@media (max-width:620px) {
+
+    .list-name {
+        width: 70vw;
+    }
+
+    .heading {
+        width: 70vw;
+    }
+
+    .list-board {
+        width: 90%;
+    }
+
+    .card {
+        width: 80vw;
+    }
+
+    /* .theme-btn {
+        right: 40px;
+        left: 0;
+    } */
+}

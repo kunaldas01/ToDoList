@@ -1,0 +1,31 @@
+<div class="list-board">
+    <form action="/addList" method="POST" class="creation-form">
+        <input type="submit" value="+" class="submit-button">
+        <input type="text" placeholder="Create a new list........" name="newList" class="newNote" required>
+    </form>
+
+    <% if(locals.lists){ %>
+
+    <ul class="collectionList">
+        <% lists.forEach((item)=>{ %>
+
+        <li>
+            <a href="/<%= item.name %>" class="list-icon">
+                <p><%= item.name %></p>
+
+                <!-- Delete Button -->
+                <form action="/deleteList" method="POST" class="delete-form">
+                    <button class="deleteItemBtn" type="submit" name="listId" value="<%= item._id %>">
+                        <img src="images/delete.png" alt="delete">
+                    </button>
+                </form>
+            </a>
+        </li>
+
+        <% }) %>
+
+    </ul>
+
+    <% } %>
+</div>
+</main>
