@@ -5,7 +5,7 @@ import _ from "lodash";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// Dynamic port for Heroku
+// Dynamic port 
 
 
 let currTheme = "light";
@@ -192,13 +192,7 @@ app.post('/deleteTask', function (req, res) {
 });
 
 
-// app.listen(dPort || port, () => {
-//     console.log(`Server running on port ${port}`);
-// })
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
-
-connectDB().then(() => {
-    app.listen(PORT, () => {
-        console.log("listening for requests");
-    })
-})
