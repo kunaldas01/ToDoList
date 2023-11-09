@@ -25,7 +25,7 @@ mongoose.connect("mongodb+srv://kunaldusk:thMXljqFOmUu9n2U@cluster0.tg40em3.mong
     })
     .catch((err)=>{
         console.log(`Failed to connect to MongoDB Atlas ${err}`);
-    );
+    });
 
 // Cyclic
 // mongoose.connect(process.env.MONGO_URI);
